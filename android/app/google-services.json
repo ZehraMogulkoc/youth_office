@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1026870575566",
+    "project_id": "youth-office-513e6",
+    "storage_bucket": "youth-office-513e6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1026870575566:android:42a2e8792ce8f7d6416b9f",
+        "android_client_info": {
+          "package_name": "com.example.youth_office"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1026870575566-9c0ko62padp1g1uqkv2i078qlg3a9oan.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDCY8VZjdzNfpJbNlIgEviXuLfsZpCvayQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1026870575566-9c0ko62padp1g1uqkv2i078qlg3a9oan.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
