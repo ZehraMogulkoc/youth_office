@@ -1,12 +1,12 @@
-
 import 'package:flutter/material.dart';
 import 'package:numberpicker/numberpicker.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:youth_office/Widget/custom_widgets.dart';
 import 'login_page.dart';
+
 class SignUpPage extends StatefulWidget {
-  SignUpPage({Key ?key, this.title}) : super(key: key);
+  SignUpPage({Key? key, this.title}) : super(key: key);
 
   final String? title;
 
@@ -15,7 +15,6 @@ class SignUpPage extends StatefulWidget {
 }
 
 class _SignUpPageState extends State<SignUpPage> {
-
   final controllerName = TextEditingController();
   final controllerEmail = TextEditingController();
   final controllerTelephoneNumber = TextEditingController();
@@ -25,16 +24,16 @@ class _SignUpPageState extends State<SignUpPage> {
   final controllerPassword = TextEditingController();
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
-    controllerName.addListener(() =>setState(() {}));
-    controllerEmail.addListener(() =>setState(() {}));
-    controllerTelephoneNumber.addListener(() =>setState(() {}));
-    controllerStudentStatus.addListener(() =>setState(() {}));
-    controllerWhereDidYouHear.addListener(() =>setState(() {}));
-    controllerCity.addListener(() =>setState(() {}));
-    controllerPassword.addListener(() =>setState(() {}));
+    controllerName.addListener(() => setState(() {}));
+    controllerEmail.addListener(() => setState(() {}));
+    controllerTelephoneNumber.addListener(() => setState(() {}));
+    controllerStudentStatus.addListener(() => setState(() {}));
+    controllerWhereDidYouHear.addListener(() => setState(() {}));
+    controllerCity.addListener(() => setState(() {}));
+    controllerPassword.addListener(() => setState(() {}));
   }
+
   Widget _backButton() {
     return InkWell(
       onTap: () {
@@ -48,8 +47,9 @@ class _SignUpPageState extends State<SignUpPage> {
               padding: EdgeInsets.only(left: 0, top: 10, bottom: 10),
               child: Icon(Icons.keyboard_arrow_left, color: Colors.black),
             ),
-            Text('Back',
-                style: TextStyle(fontSize: 12, fontWeight: FontWeight.w500),
+            Text(
+              'Back',
+              style: TextStyle(fontSize: 12, fontWeight: FontWeight.w500),
             )
           ],
         ),
@@ -74,26 +74,30 @@ class _SignUpPageState extends State<SignUpPage> {
           gradient: LinearGradient(
               begin: Alignment.centerLeft,
               end: Alignment.centerRight,
-              colors: [Color(0xfffb4857),Color(0xff6c1d1d)])),
+              colors: [Color(0xfffb4857), Color(0xff6c1d1d)])),
       child: TextButton(
-        child: Text( 'Register Now',
-          style: TextStyle(fontSize: 20, color: Colors.white),),
+        child: Text(
+          'Register Now',
+          style: TextStyle(fontSize: 20, color: Colors.white),
+        ),
         // TODO add firebase functuonality.
         onPressed: () async {
-          final json ={
+          final json = {
             'name': controllerName.text,
             'email': controllerEmail.text,
-            'telephoneNumber':controllerTelephoneNumber.text,
-            'studentStatus':controllerStudentStatus.text,
-            'whereDidYouHear':controllerWhereDidYouHear.text,
-            'city':controllerCity.text,
-            'age':currentHorizontalIntValue,
-
+            'telephoneNumber': controllerTelephoneNumber.text,
+            'studentStatus': controllerStudentStatus.text,
+            'whereDidYouHear': controllerWhereDidYouHear.text,
+            'city': controllerCity.text,
+            'age': currentHorizontalIntValue,
           };
 
-
-          await FirebaseFirestore.instance.collection('users').doc(controllerEmail.text).set(json);
-          await FirebaseAuth.instance.createUserWithEmailAndPassword(email: controllerEmail.text, password: controllerPassword.text);
+          await FirebaseFirestore.instance
+              .collection('users')
+              .doc(controllerEmail.text)
+              .set(json);
+          await FirebaseAuth.instance.createUserWithEmailAndPassword(
+              email: controllerEmail.text, password: controllerPassword.text);
           setState(() {
             controllerName.clear();
             controllerEmail.clear();
@@ -104,7 +108,6 @@ class _SignUpPageState extends State<SignUpPage> {
             controllerPassword.clear();
           });
         },
-
       ),
     );
   }
@@ -132,9 +135,7 @@ class _SignUpPageState extends State<SignUpPage> {
             Text(
               'Login',
               style: TextStyle(
-                  color: Colors.red,
-                  fontSize: 13,
-                  fontWeight: FontWeight.w600),
+                  color: Colors.red, fontSize: 13, fontWeight: FontWeight.w600),
             ),
           ],
         ),
@@ -142,29 +143,36 @@ class _SignUpPageState extends State<SignUpPage> {
     );
   }
 
-
-
   Widget _informationWidget() {
     var age = 25;
     return Column(
       children: <Widget>[
-        CustomWidgets().TextFieldWidget( "Name & Surname", controllerName, "Enter your name and surname"),
-        CustomWidgets().TextFieldWidget( "Email", controllerEmail, "Enter your email"),
-        CustomWidgets().TextFieldWidget( "Password", controllerPassword, "Create a password"),
-        CustomWidgets().TextFieldWidget( "Telephone Number", controllerTelephoneNumber, "Telephone"),
-        CustomWidgets().TextFieldWidget( "Student Status", controllerStudentStatus, "Student Status"),
-        CustomWidgets().TextFieldWidget( "Where did you hear us", controllerWhereDidYouHear, "Where did you hear us"),
-        CustomWidgets().TextFieldWidget( "City", controllerCity, "City"),
-
-            Column(   crossAxisAlignment: CrossAxisAlignment.start,children: [ Text(
+        CustomWidgets().TextFieldWidget(
+            "Name & Surname", controllerName, "Enter your name and surname"),
+        CustomWidgets()
+            .TextFieldWidget("Email", controllerEmail, "Enter your email"),
+        CustomWidgets().TextFieldWidget(
+            "Password", controllerPassword, "Create a password"),
+        CustomWidgets().TextFieldWidget(
+            "Telephone Number", controllerTelephoneNumber, "Telephone"),
+        CustomWidgets().TextFieldWidget(
+            "Student Status", controllerStudentStatus, "Student Status"),
+        CustomWidgets().TextFieldWidget("Where did you hear us",
+            controllerWhereDidYouHear, "Where did you hear us"),
+        CustomWidgets().TextFieldWidget("City", controllerCity, "City"),
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
               "Select Your Age",
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
-            ),IntegerExample()],),
-
+            ),
+            IntegerExample()
+          ],
+        ),
       ],
     );
   }
-
   @override
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
@@ -197,7 +205,6 @@ class _SignUpPageState extends State<SignUpPage> {
                     _submitButton(),
                     SizedBox(height: height * .14),
                     _loginAccountLabel(),
-
                   ],
                 ),
               ),
@@ -209,14 +216,15 @@ class _SignUpPageState extends State<SignUpPage> {
     );
   }
 }
+
 class IntegerExample extends StatefulWidget {
   @override
   _IntegerExampleState createState() => _IntegerExampleState();
 }
+
 int currentHorizontalIntValue = 20;
+
 class _IntegerExampleState extends State<IntegerExample> {
-
-
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -245,7 +253,9 @@ class _IntegerExampleState extends State<IntegerExample> {
                 currentHorizontalIntValue = newValue.clamp(0, 100);
               }),
             ),
-            Text('Current selected age: $currentHorizontalIntValue',),
+            Text(
+              'Current selected age: $currentHorizontalIntValue',
+            ),
             IconButton(
               icon: Icon(Icons.add),
               onPressed: () => setState(() {

@@ -4,7 +4,8 @@ import 'package:youth_office/custom_clipper.dart';
 
 import '../Pages/erasmus_page.dart';
 import '../Pages/turkish_national_agency.dart';
-class CustomWidgets{
+
+class CustomWidgets {
   Widget title() {
     return RichText(
       textAlign: TextAlign.center,
@@ -23,7 +24,7 @@ class CustomWidgets{
             ),
           ]),
     );
-}
+  }
 
   Widget title2() {
     return RichText(
@@ -31,11 +32,7 @@ class CustomWidgets{
       text: TextSpan(
           text: 'AGU',
           style: TextStyle(
-              fontSize: 30,
-              fontWeight: FontWeight.w700,
-              color: Colors.red
-          ),
-
+              fontSize: 30, fontWeight: FontWeight.w700, color: Colors.red),
           children: [
             TextSpan(
               text: 'Youth',
@@ -49,28 +46,25 @@ class CustomWidgets{
     );
   }
 
-  Widget beizerContainer(BuildContext context){
+  Widget beizerContainer(BuildContext context) {
     return Container(
         child: Transform.rotate(
-          angle: -pi / 3.5,
-          child: ClipPath(
-            clipper: ClipPainter(),
-            child: Container(
-              height: MediaQuery.of(context).size.height *.4,
-              width: MediaQuery.of(context).size.width,
-              decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                      begin: Alignment.topCenter,
-                      end: Alignment.bottomCenter,
-                      colors: [Color(0xfffb4857),Color(0xff6c1d1d)]
-                  )
-              ),
-            ),
-          ),
-        )
-    );
+      angle: -pi / 3.5,
+      child: ClipPath(
+        clipper: ClipPainter(),
+        child: Container(
+          height: MediaQuery.of(context).size.height * .4,
+          width: MediaQuery.of(context).size.width,
+          decoration: BoxDecoration(
+              gradient: LinearGradient(
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                  colors: [Color(0xfffb4857), Color(0xff6c1d1d)])),
+        ),
+      ),
+    ));
   }
-  
+
   static Widget drawer_widget(BuildContext context) {
     return ListView(
       controller: ScrollController(),
@@ -89,7 +83,7 @@ class CustomWidgets{
               color: Colors.black,
             ),
           ),
-          accountEmail:Text(
+          accountEmail: Text(
             'Welcome!',
             style: TextStyle(
               fontSize: 18,
@@ -98,7 +92,7 @@ class CustomWidgets{
             ),
           ),
         ),
-         ListTile(
+        ListTile(
           title: Text(
             'Erasmus+',
             style: TextStyle(
@@ -111,7 +105,7 @@ class CustomWidgets{
             Navigator.push(context,
                 MaterialPageRoute(builder: (context) => ErasmusPage()));
           },
-          leading:Icon(
+          leading: Icon(
             Icons.card_travel,
             size: 26.0,
             color: Colors.black,
@@ -159,8 +153,8 @@ class CustomWidgets{
             color: Colors.black,
           ),
         ),
-         ListTile(
-          title:  Text(
+        ListTile(
+          title: Text(
             'Turkish National Agency',
             style: TextStyle(
               fontSize: 16.0,
@@ -172,14 +166,14 @@ class CustomWidgets{
             Navigator.push(
                 context, MaterialPageRoute(builder: (context) => TNA()));
           },
-          leading:  Icon(
+          leading: Icon(
             Icons.apartment,
             size: 26.0,
             color: Colors.black,
           ),
         ),
         ListTile(
-          title:Text(
+          title: Text(
             'SDG Guide',
             style: TextStyle(
               fontSize: 16.0,
@@ -251,7 +245,6 @@ class CustomWidgets{
             ),
           ),
           onTap: () {
-
             Navigator.pop(context);
           },
           leading: Icon(
@@ -263,9 +256,8 @@ class CustomWidgets{
       ],
     );
   }
-
-
-  Widget TextFieldWidget(String type, TextEditingController ctrl, String label) {
+  Widget TextFieldWidget(
+      String type, TextEditingController ctrl, String label) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
@@ -282,8 +274,8 @@ class CustomWidgets{
           keyboardType: TextInputType.emailAddress,
           textInputAction: TextInputAction.next,
           decoration: InputDecoration(
-            contentPadding: new EdgeInsets.symmetric(
-                vertical: 15.0, horizontal: 10.0),
+            contentPadding:
+                new EdgeInsets.symmetric(vertical: 15.0, horizontal: 10.0),
             focusedBorder: OutlineInputBorder(
               borderSide: BorderSide(color: Colors.red),
             ),
@@ -298,5 +290,4 @@ class CustomWidgets{
       ],
     );
   }
-
 }
