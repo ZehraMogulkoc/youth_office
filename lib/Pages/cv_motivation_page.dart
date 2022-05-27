@@ -13,7 +13,7 @@ class cvPage extends StatelessWidget {
             decoration: new BoxDecoration(
               image: new DecorationImage(
                 opacity: .6,
-                image: new AssetImage("images/cv.jpg"),
+                image: new AssetImage("assets/cv.jpg"),
                 fit: BoxFit.cover,
               ),
             )),

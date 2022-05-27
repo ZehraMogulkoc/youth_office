@@ -1,9 +1,8 @@
-import 'dart:collection';
 import 'package:flutter/material.dart';
-import 'package:youth_office/profile_page.dart';
+import 'package:youth_office/Pages/profile_page.dart';
 import 'drawer.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
-import 'package:youth_office/mainpage.dart';
+import 'package:youth_office/Pages/mainpage.dart';
 
 class BottomNavBar extends StatefulWidget {
   @override

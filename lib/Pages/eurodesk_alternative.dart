@@ -1,7 +1,6 @@
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'package:youth_office/eurodesk_page.dart';
+import 'package:youth_office/Webview/eurodesk_page.dart';
 
 class EurodeskPageAlternative extends StatefulWidget {
   const EurodeskPageAlternative({Key? key}) : super(key: key);

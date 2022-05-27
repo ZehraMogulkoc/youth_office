@@ -1,6 +1,6 @@
 
 import 'package:flutter/material.dart';
-import 'package:youth_office/european_youth_portal.dart';
+import 'package:youth_office/Webview/european_youth_portal.dart';
 
 class EuropeanYouthPortalAlternative extends StatefulWidget {
   const EuropeanYouthPortalAlternative({Key? key}) : super(key: key);

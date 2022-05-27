@@ -20,7 +20,6 @@ class _AboutUsState extends State<AboutUs> {
             child: SingleChildScrollView(
               child: Column(
          children:  <Widget>[
-              // Image.asset('assets/youth_factory.png'),
            Image.asset('assets/AGU YOUTH FACTORY_1.png'),
            Text('  AGU Youth Factory, a first – class in its field and in Turkey, is located in Abdullah Gül University Sumer Campus. Sumer campus is situated at the location of the old Sumer Textile Factory,'
                ' which was found in Kayseri with the vision of production and development in the first years of the Turkish Republic. AGU Youth Factory takes inspiration from the same vision of the historical factory and'
